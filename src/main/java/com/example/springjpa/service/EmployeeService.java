@@ -17,4 +17,8 @@ public class EmployeeService {
     public Employee saveEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
+
+    public Employee filter(String name) {
+        return employeeRepository.filter(name);
+    }
 }
