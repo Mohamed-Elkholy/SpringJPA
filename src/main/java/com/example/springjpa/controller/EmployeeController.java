@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
@@ -22,7 +24,7 @@ public class EmployeeController {
         return employeeService.saveEmployee(employee);
     }
     @GetMapping()
-    public Employee findByName(@Param("name") String name){
+    public List<Employee> findByName(@RequestParam("name") String name){
         return employeeService.filter(name);
     }
 }

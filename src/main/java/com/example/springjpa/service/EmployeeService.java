@@ -5,6 +5,8 @@ import com.example.springjpa.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EmployeeService {
     @Autowired
@@ -18,7 +20,7 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
-    public Employee filter(String name) {
+    public List<Employee> filter(String name) {
         return employeeRepository.filter(name);
     }
 }

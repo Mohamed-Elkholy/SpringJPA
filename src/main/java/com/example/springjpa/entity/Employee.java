@@ -11,6 +11,9 @@ public class Employee {
     @Column(name = "emp_name")
     private String name ;
     private Double salary ;
+    @ManyToOne
+    @JoinColumn(name = "dept_id")
+    private Department department ;
 
     public long getId() {
         return id;
