@@ -20,4 +20,9 @@ public class DepartmentController {
     public Department saveDepartment(@RequestBody Department department){
         return departmentService.saveDepartment(department);
     }
+
+    @PutMapping()
+    public Department updateDepartment(@RequestBody Department department){
+        return departmentService.updateDepartment(department);
+    }
 }

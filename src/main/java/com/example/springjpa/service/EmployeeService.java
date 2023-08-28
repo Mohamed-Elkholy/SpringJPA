@@ -23,4 +23,11 @@ public class EmployeeService {
     public List<Employee> filter(String name) {
         return employeeRepository.filter(name);
     }
+
+    public Employee updateEmployee(Employee employee) {
+        Employee current = employeeRepository.findById(employee.getId()).orElseThrow();
+        current.setName(employee.getName());
+        current.setSalary(employee.getSalary());
+        return employeeRepository.save(current);
+    }
 }

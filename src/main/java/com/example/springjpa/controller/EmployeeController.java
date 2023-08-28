@@ -1,5 +1,6 @@
 package com.example.springjpa.controller;
 
+import com.example.springjpa.entity.Department;
 import com.example.springjpa.entity.Employee;
 import com.example.springjpa.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,10 @@ public class EmployeeController {
     @GetMapping()
     public List<Employee> findByName(@RequestParam("name") String name){
         return employeeService.filter(name);
+    }
+
+    @PutMapping()
+    public Employee updateEmployee(@RequestBody Employee employee){
+        return employeeService.updateEmployee(employee);
     }
 }

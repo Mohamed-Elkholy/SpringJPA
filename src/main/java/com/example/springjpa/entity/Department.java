@@ -1,5 +1,6 @@
 package com.example.springjpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity

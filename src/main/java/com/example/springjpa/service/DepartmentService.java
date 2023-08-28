@@ -17,4 +17,10 @@ public class DepartmentService {
     public Department saveDepartment(Department department) {
         return departmentRepo.save(department);
     }
+
+    public Department updateDepartment(Department department) {
+        Department current = departmentRepo.findById(department.getId()).orElseThrow();
+        current.setName(department.getName());
+        return departmentRepo.save(current);
+    }
 }
