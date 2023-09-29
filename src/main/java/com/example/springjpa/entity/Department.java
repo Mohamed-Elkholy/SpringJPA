@@ -12,6 +12,14 @@ public class Department {
     @Column(name = "dept_name")
     private String name ;
 
+    @Override
+    public String toString() {
+        return "Department{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     public Long getId() {
         return id;
     }

@@ -11,6 +11,25 @@ public class Employee {
     @Column(name = "emp_name")
     private String name ;
     private Double salary ;
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                ", department=" + department +
+                '}';
+    }
+
     @ManyToOne
     @JoinColumn(name = "dept_id")
     private Department department ;

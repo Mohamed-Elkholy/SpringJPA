@@ -5,6 +5,8 @@ import com.example.springjpa.repository.DepartmentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DepartmentService {
     @Autowired
@@ -18,9 +20,14 @@ public class DepartmentService {
         return departmentRepo.save(department);
     }
 
-    public Department updateDepartment(Department department) {
-        Department current = departmentRepo.findById(department.getId()).orElseThrow();
-        current.setName(department.getName());
-        return departmentRepo.save(current);
+    public List<Department> getAll(){
+        return departmentRepo.findAll();
     }
+//
+//    public Department updateDepartment(Department department) {
+//        Department current = departmentRepo.findById(department.getId()).orElseThrow();
+//        current.setName(department.getName());
+//        return departmentRepo.save(current);
+//    }
+
 }

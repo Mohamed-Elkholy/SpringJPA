@@ -24,13 +24,23 @@ public class EmployeeController {
     public Employee saveEmployee(@RequestBody Employee employee){
         return employeeService.saveEmployee(employee);
     }
-    @GetMapping()
-    public List<Employee> findByName(@RequestParam("name") String name){
-        return employeeService.filter(name);
+
+    @GetMapping("/all")
+    public List<Employee> getAll(){
+        return employeeService.getAll();
     }
 
-    @PutMapping()
-    public Employee updateEmployee(@RequestBody Employee employee){
-        return employeeService.updateEmployee(employee);
+    @GetMapping("/department/{id}")
+    public List<Employee> getAllEmployeeByDepartmentId(@PathVariable("id") Long id){
+        return employeeService.getAllEmployeeByDepartmentId(id);
     }
+//    @GetMapping()
+//    public List<Employee> findByName(@RequestParam("name") String name){
+//        return employeeService.filter(name);
+//    }
+//
+//    @PutMapping()
+//    public Employee updateEmployee(@RequestBody Employee employee){
+//        return employeeService.updateEmployee(employee);
+//    }
 }

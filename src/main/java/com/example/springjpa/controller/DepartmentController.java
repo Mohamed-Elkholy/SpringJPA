@@ -6,6 +6,8 @@ import com.example.springjpa.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/department")
 public class DepartmentController {
@@ -21,8 +23,14 @@ public class DepartmentController {
         return departmentService.saveDepartment(department);
     }
 
-    @PutMapping()
-    public Department updateDepartment(@RequestBody Department department){
-        return departmentService.updateDepartment(department);
+    @GetMapping()
+    public List<Department> getAll(){
+        return departmentService.getAll();
     }
+
+//    @PutMapping()
+//    public Department updateDepartment(@RequestBody Department department){
+//        return departmentService.updateDepartment(department);
+//    }
+
 }
